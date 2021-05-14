@@ -31,7 +31,7 @@ const App = () => {
               <DonutLargeIcon style={{ color: '#919191' }} />
             </div>
             <div className="header-btn">
-              <ChatIcon  style={{ color: '#919191' }} />
+              <ChatIcon style={{ color: '#919191' }} />
             </div>
             <div className="header-btn">
               <MoreVertIcon style={{ color: '#919191' }} />
@@ -50,6 +50,8 @@ const App = () => {
           {chatList.map((item, key)=>(
             <ChatListItem 
               key={key}
+              data={item}
+              active={chatAtivo.chatId === item.chatId}
 							onClick={()=>setChatAtivo(item)}							
             />
           ))}

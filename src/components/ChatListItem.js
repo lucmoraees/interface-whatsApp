@@ -1,21 +1,21 @@
 import React from 'react';
 import '../styles/ChatListItem.css'
 
-const ChatListItem = ({onClick}) => {
+const ChatListItem = ({onClick, active, data}) => {
   return (
     <div 
-      className="chatListItem-container"
+      className={`chatListItem-container ${active? 'active' : ''}`}
       onClick={onClick}
     >
       <img 
         className="chatListItem-avatar" 
-        src="https://www.w3schools.com/howto/img_avatar2.png"  
+        src={data.image}  
         alt="" 
       />
       <div className="chatListItem-conteudo" >
         <div className="chatListItem-conteudo-cima">
           <div className="chatListItem-nome" >
-            Lucas Moraes
+            {data.nome}
           </div>
           <div className="chatListItem-horario" >
             13:30

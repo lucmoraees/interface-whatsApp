@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+
 import '../styles/ChatAberto.css';
 import MenssagemItem from './MenssagemItem';
-import EmojiPicker from 'emoji-picker-react';
+
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
@@ -9,6 +10,8 @@ import MoodIcon from '@material-ui/icons/Mood';
 import SendIcon from '@material-ui/icons/Send';
 import MicIcon from '@material-ui/icons/Mic';
 import CloseIcon from '@material-ui/icons/Close';
+
+import EmojiPicker from 'emoji-picker-react';
 
 const ChatAberto = ({user}) => {
 	const body = useRef();

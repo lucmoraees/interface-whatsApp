@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+
+import Login from './components/Login'
 import ChatListItem from './components/ChatListItem';
 import ChatAberto from './components/ChatAberto';
 import ChatIntro from './components/ChatIntro';
 import NewChat from './components/NewChat';
+
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -23,6 +26,19 @@ const App = () => {
     name: 'Lucas Moraes'
   });
   const [showNewChat, setShowNewChat] = useState(false);
+
+  const handleLoginData = async () => {
+    const newUser = {
+      id: u.id,
+      nome: u.displayName,
+      avatar: u.photoURL
+    }
+    setUser(newUser);
+  };
+
+  if (user === null) {
+    return (<Login onReceive={handleLoginData} />)
+  };
 
   return (
     <div className="chat-window">
